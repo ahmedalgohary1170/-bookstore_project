@@ -12,19 +12,22 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 py-5">
-                {% for object in object_list %}
+            <a href="/list/create" > Create </a>
+            
+            {% for object in object_list %}
+            <div class="col-lg-4  my-5">
+                    
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{object.image.url}}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">{{object}}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text">{{object.description}}</p>
+                        <a href="list/{{object.id}}/" class="btn btn-primary"> More </a>
                         </div>
                     </div>
             
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
