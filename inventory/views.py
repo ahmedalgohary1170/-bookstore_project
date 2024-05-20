@@ -29,7 +29,7 @@ class BookCreate(CreateView):
     fields = ["author","title","category","description","image","price","stock"]
 
     template_name = "inventory/book_create.html"
-    success_url ="/list"
+    success_url ="/"
 
 
 
@@ -39,7 +39,7 @@ class BookUpdate(UpdateView):
     model = Book
     fields = ["title","category","description","image","price","stock"]
     template_name = "inventory/book_update.html"
-    success_url ="/list"
+    success_url ="/"
 
 
 
