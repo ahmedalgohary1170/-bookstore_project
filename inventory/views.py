@@ -1,6 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
-from django.views.generic.edit import UpdateView , CreateView
+from django.views.generic.edit import UpdateView , CreateView , DeleteView
+from .models import Book
+
+class DeleteBook(DeleteView):
+    model = Book
+    template_name = "inventory/delete.html"
+    success_url ="/"
+
+
 from .models import Book
 
 
@@ -40,6 +48,9 @@ class BookUpdate(UpdateView):
     fields = ["title","category","description","image","price","stock"]
     template_name = "inventory/book_update.html"
     success_url ="/"
+
+
+
 
 
 
