@@ -7,7 +7,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 
 
-class BookListAPI(generics.ListAPIView):
+class BookListAPI(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = serializers.BookListSerializer
     filter_backends = [DjangoFilterBackend,filters.SearchFilter,filters.OrderingFilter]
@@ -15,6 +15,6 @@ class BookListAPI(generics.ListAPIView):
     filterset_fields = ['category','author']
     search_fields = ['author__name','category__name']
 
-class BookDetailAPI(generics.RetrieveAPIView):
+class BookDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = serializers.BookDetailSerializer
