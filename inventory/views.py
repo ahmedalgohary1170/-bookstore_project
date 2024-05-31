@@ -8,28 +8,11 @@ class DeleteBook(DeleteView):
     template_name = "inventory/delete.html"
     success_url ="/"
 
-
-from .models import Book
-
-
-
-
-
-
-
-
-
-
-
-
 class BookList(ListView):
     model=Book
 
-
-
 class BookDetail(DetailView):
     model=Book
-
 
 
 class BookCreate(CreateView):
@@ -38,9 +21,6 @@ class BookCreate(CreateView):
 
     template_name = "inventory/book_create.html"
     success_url ="/"
-
-
-
 
 
 class BookUpdate(UpdateView):

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'drf_yasg',
     'rest_framework',
     'django_filters',
 
@@ -46,7 +47,13 @@ INSTALLED_APPS = [
     'inventory',
 ]
 
-
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
 
 # rest framework
 REST_FRAMEWORK = {
